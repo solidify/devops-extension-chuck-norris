@@ -4,6 +4,7 @@ import TFS_Build_Contracts = require("TFS/Build/Contracts");
 import TFS_Build_Extension_Contracts = require("TFS/Build/ExtensionContracts");
 import TFS_Build = require("TFS/Build/RestClient");
 import DT_Client = require("TFS/DistributedTask/TaskRestClient");
+import VSS_Context = require("VSS/Context");
 
 export class BuildResultsSection extends Controls.BaseControl {
 
@@ -59,7 +60,15 @@ export class BuildResultsSection extends Controls.BaseControl {
 
     public initialize(): void {
         super.initialize();
-        
+
+        var vstsVersion = VSS_Context.getPageContext().diagnostics.webPlatformVersion
+        var extensionVersion = VSS.getExtensionContext().version;
+        var publisherId = VSS.getExtensionContext().publisherId;
+        var extensionId = VSS.getExtensionContext().extensionId
+        console.log("--- VSTS version: " + vstsVersion);
+        console.log("--- Extension version: " + extensionVersion);
+        console.log(`--- Publisher.Extension: ${publisherId}.${extensionId}`)
+
         var n = Math.floor(Math.random() * this.quotes.length);
         this._quote = this.quotes[n];
         this._element.find("#quote").text(this._quote);
@@ -67,10 +76,7 @@ export class BuildResultsSection extends Controls.BaseControl {
         var sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig = VSS.getConfiguration();
         if (sharedConfig) {
             sharedConfig.onBuildChanged((build: TFS_Build_Contracts.Build) => {
-                //var buildId = build.id;
-                //var imgSource = "images/chuck-wait.png";
-                //this._element.find("#status-img").attr("src", imgSource);
-                if(!this._isInitialized) {
+                if (!this._isInitialized) {
                     this._updateBuildReportSection(sharedConfig, build);
                     this._isInitialized = true;
                 }
@@ -79,8 +85,8 @@ export class BuildResultsSection extends Controls.BaseControl {
         }
     }
 
-    private _updateBuildReportSection(sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig, 
-                          build: TFS_Build_Contracts.Build) {
+    private _updateBuildReportSection(sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig,
+        build: TFS_Build_Contracts.Build) {
         if (sharedConfig) {
             var showMrNorris = false;
             var buildClient: TFS_Build.BuildHttpClient3_1 = TFS_Build.getClient();
@@ -88,14 +94,22 @@ export class BuildResultsSection extends Controls.BaseControl {
                 buildDefinition.build.forEach(step => {
                     if (step.task.id == "6785970c-2d58-4260-b047-0a54028ee9c1") {
                         showMrNorris = true;
+                        console.log("Found mr Norris!")
                     }
                 });
+                var publisherId = VSS.getExtensionContext().publisherId;
+                var extensionId = VSS.getExtensionContext().extensionId
+                var sectionId = "chuck-norris-build-status-section";
+                var section = `${publisherId}.${extensionId}.${sectionId}`;
+                try {
+                    console.log(`Setting ${section} to ${showMrNorris}.`)
+                    var x: any = sharedConfig;
+                    x.setSectionVisibility(section, showMrNorris);
+                } catch (error) {
+                    console.log("Failed to set build section visibility.")
+                }
             });
-
-            // TODO: api will be available in S121
-            //sharedConfig.setSectionVisibility("Mathias.mathias-build-chucknorris.chuck-norris-build-status-section", showMrNorris);
         }
-
     }
 
     private _updateBuildStatus(build: TFS_Build_Contracts.Build) {
@@ -103,7 +117,6 @@ export class BuildResultsSection extends Controls.BaseControl {
         var sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig = VSS.getConfiguration();
 
         var imgSource = "images/chuck-wait.png";
-        //this._element.find("#status-img").attr("src", imgSource);
         if (build.status === TFS_Build_Contracts.BuildStatus.InProgress) {
             imgSource = "images/chuck-wait.png";
             this._element.find("#quote").text("Working on it...");

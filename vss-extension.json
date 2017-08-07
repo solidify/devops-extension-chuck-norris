@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "chucknorris-build-enhancer",
-  "version": "0.1.32",
+  "version": "0.1.36",
   "name": "Chuck Norris Build Enhancer",
   "scopes": [
     "vso.build"
