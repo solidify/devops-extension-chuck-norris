@@ -1,0 +1,31 @@
+﻿{
+  "id": "6785970c-2d58-4260-b047-0a54028ee9c1",
+  "name": "ChuckNorrisTask",
+  "friendlyName": "Chuck Norris Quotes",
+  "description": "Marker task to show Chuck Norris quotes in the build summary report.",
+  "category": "Utility",
+  "visibility": [
+    "Build"
+  ],
+  "author": "Mathias Olausson",
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 0
+  },
+  "demands": [
+  ],
+  "minimumAgentVersion": "1.83.0",
+  "groups": [
+
+  ],
+  "inputs": [],
+  "instanceNameFormat": "Chuck Norris Quotes",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\ChuckNorrisTask.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

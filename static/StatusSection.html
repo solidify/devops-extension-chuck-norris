@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<head>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+    <script type="text/javascript">
+        VSS.init( {
+            explicitNotifyLoaded: true,
+            usePlatformScripts: true,
+            usePlatformStyles: true,
+            moduleLoaderConfig: {
+                paths: { "scripts": "scripts" }
+            }
+        });
+
+        VSS.ready(function() {
+            require(["enhancer/buildResults"], function () { });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="build-status">
+        <img id="status-img" />
+        <blockquote id="quote"></blockquote>
+    </div>
+</body>

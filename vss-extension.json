@@ -1,0 +1,111 @@
+{
+  "manifestVersion": 1,
+  "id": "chucknorris-build-enhancer",
+  "version": "0.1.32",
+  "name": "Chuck Norris Build Enhancer",
+  "scopes": [
+    "vso.build"
+  ],
+  "description": "Add this extension to your build definition and get a Chuck Norris quote to help you keep your builds in shape!",
+  "publisher": "mathias",
+  "public": false,
+  "icons": {
+    "default": "static/images/logo.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services.Cloud"
+    }
+  ],
+  "tags": [
+    "Build", 
+    "Humor"
+  ],
+  "links": {
+    "home": {
+      "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+    },
+    "getstarted": {
+      "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+    },
+    "learn": {
+      "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+    },
+    "support": {
+      "uri": "https://github.com/solidify/vsts-extension-chuck-norris/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+  },
+  "branding": {
+    "color": "rgb(0, 0, 0)",
+    "theme": "dark"
+  },
+  "content": {
+    "license": {
+      "path": "doc/license.md"
+    },
+    "details": {
+      "path": "doc/overview.md"
+    }
+  },
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true,
+      "packagePath": "enhancer"
+    },
+    {
+      "path": "src/task",
+      "addressable": true,
+      "packagePath": "ChuckNorrisTask"
+    },
+    {
+      "path": "doc",
+      "addressable": true,
+      "packagePath": "doc"
+    },
+    {
+      "path": "static",
+      "addressable": true,
+      "packagePath": "/"
+    },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
+    }
+  ],
+  "categories": [
+    "Build and release"
+  ],
+  "contributions": [
+    {
+      "id": "chuck-norris-task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "type": "ms.vss-distributed-task.task",
+      "properties": {
+        "name": "ChuckNorrisTask"
+      }
+    },
+    {
+      "id": "chuck-norris-build-status-section",
+      "type": "ms.vss-build-web.build-results-section",
+      "description": "Adds a section to the build Summary with Chuck Norris's comment about the build.",
+      "targets": [
+        ".build-info-tab",
+        "ms.vss-build-web.build-results-summary-tab"
+      ],
+      "properties": {
+        "name": "Chuck Norris Says",
+        "uri": "StatusSection.html",
+        "order": 20,
+        "height": 120
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "chucknorris-build-enhancer",
+  "scripts": {
+    "build": "tsc -p .",
+    "postbuild": "npm run package",
+    "package": "tfx extension create",
+    "clean": "rimraf ./dist && rimraf ./*.vsix"
+  },
+  "author": "Solidify Labs",
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "rimraf": "^2.5.4",
+    "tfx-cli": "^0.3.45",
+    "typescript": "2.3"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.2.10",
+    "@types/q": "^1.0.3",
+    "vss-web-extension-sdk": "^2.117.0"
+  }
+}
