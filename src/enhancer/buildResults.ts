@@ -77,7 +77,9 @@ export class BuildResultsSection extends Controls.BaseControl {
         if (sharedConfig) {
             this._setSectionVisibility(sharedConfig, false);
             sharedConfig.onBuildChanged((build: TFS_Build_Contracts.Build) => {
+                console.log("before init");
                 if (!this._isInitialized) {
+                    console.log("initializing");
                     this._updateBuildReportSection(sharedConfig, build);
                     this._isInitialized = true;
                 }
