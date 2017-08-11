@@ -75,6 +75,7 @@ export class BuildResultsSection extends Controls.BaseControl {
 
         var sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig = VSS.getConfiguration();
         if (sharedConfig) {
+            this._setSectionVisibility(sharedConfig, false);
             sharedConfig.onBuildChanged((build: TFS_Build_Contracts.Build) => {
                 if (!this._isInitialized) {
                     this._updateBuildReportSection(sharedConfig, build);
@@ -97,18 +98,22 @@ export class BuildResultsSection extends Controls.BaseControl {
                         console.log("Found mr Norris!")
                     }
                 });
-                var publisherId = VSS.getExtensionContext().publisherId;
-                var extensionId = VSS.getExtensionContext().extensionId
-                var sectionId = "chuck-norris-build-status-section";
-                var section = `${publisherId}.${extensionId}.${sectionId}`;
-                try {
-                    console.log(`Setting ${section} to ${showMrNorris}.`)
-                    var x: any = sharedConfig;
-                    x.setSectionVisibility(section, showMrNorris);
-                } catch (error) {
-                    console.log("Failed to set build section visibility.")
-                }
+                this._setSectionVisibility(sharedConfig, showMrNorris);
             });
+        }
+    }
+
+    private _setSectionVisibility(sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig, enabled: boolean) {
+        var publisherId = VSS.getExtensionContext().publisherId;
+        var extensionId = VSS.getExtensionContext().extensionId
+        var sectionId = "chuck-norris-build-status-section";
+        var section = `${publisherId}.${extensionId}.${sectionId}`;
+        try {
+            console.log(`Setting ${section} to ${enabled}.`)
+            var x: any = sharedConfig;
+            x.setSectionVisibility(section, enabled);
+        } catch (error) {
+            console.log("Failed to set build section visibility.")
         }
     }
 
