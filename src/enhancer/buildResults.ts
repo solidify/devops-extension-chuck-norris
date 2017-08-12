@@ -76,9 +76,7 @@ export class BuildResultsSection extends Controls.BaseControl {
         var sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig = VSS.getConfiguration();
         if (sharedConfig) {
             sharedConfig.onBuildChanged((build: TFS_Build_Contracts.Build) => {
-                console.log("before init");
                 if (!this._isInitialized) {
-                    console.log("initializing");
                     this._updateBuildReportSection(sharedConfig, build);
                     this._isInitialized = true;
                 }
