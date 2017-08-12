@@ -1,9 +1,9 @@
 # Add Chuck Norris quotes to your VSTS build report #
 This VSTS build extension will show a new section in your build report with an encouraging Chuck Norris quote.
 
-![](./docs/chuck-build-report.png)
+![](docs/chuck-build-report.png)
 
-See [Overview](./docs/overview.md) for details on how the extension works and is intended to be used.
+See [Overview](docs/overview.md) for details on how the extension works and is intended to be used.
 
 # Building the extension #
 ![](https://solidify.visualstudio.com/_apis/public/build/definitions/430a0fc1-6d24-414b-9bef-8afa19eb4b15/28/badge)
@@ -41,4 +41,4 @@ Here is how you can contribute to this project:
 - Submit bugs and help us verify fixes  
 - Submit pull requests for bug fixes and features and discuss existing proposals   
 
-Please refer to [Contribution guidelines](.github/CONTRIBUTING.md) and the [Code of Conduct](docs/CODE_OF_CONDUCT.md) for more details.
+Please refer to [Contribution guidelines](docs/CONTRIBUTING.md) and the [Code of Conduct](docs/CODE_OF_CONDUCT.md) for more details.
