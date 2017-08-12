@@ -6,6 +6,12 @@ The build report will now display a section with a Chuck Norris quote:
 
 ![](/docs/chuck-build-report.png)
 
-## Credits ##
+## Contributions ##
+
+### Team ###
+
+We thank the following contributor(s): **Mathias Olausson**.
+
+### Credits ###
 
 [The Ultimate Top 25 Chuck Norris “The Programmer” Jokes](http://codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/)

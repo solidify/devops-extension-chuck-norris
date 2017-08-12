@@ -45,7 +45,7 @@
   },
   "content": {
     "license": {
-      "path": "docs/license.md"
+      "path": "docs/LICENSE.md"
     },
     "details": {
       "path": "docs/overview.md"
