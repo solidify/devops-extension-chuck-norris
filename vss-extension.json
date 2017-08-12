@@ -19,7 +19,7 @@
   ],
   "tags": [
     "Build", 
-    "Humor"
+    "Fun"
   ],
   "links": {
     "home": {
@@ -45,10 +45,10 @@
   },
   "content": {
     "license": {
-      "path": "doc/license.md"
+      "path": "docs/LICENSE.md"
     },
     "details": {
-      "path": "doc/overview.md"
+      "path": "docs/overview.md"
     }
   },
   "files": [
@@ -63,9 +63,9 @@
       "packagePath": "ChuckNorrisTask"
     },
     {
-      "path": "doc",
+      "path": "docs",
       "addressable": true,
-      "packagePath": "doc"
+      "packagePath": "docs"
     },
     {
       "path": "static",
