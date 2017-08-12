@@ -1,5 +1,5 @@
 # Add Chuck Norris quotes to your VSTS build report #
-This VSTS build extension will show a new section in your build reports with an encouraging Chuck Norris quote.
+This VSTS build extension will show a new section in your build report with an encouraging Chuck Norris quote.
 
 ![](./docs/chuck-build-report.png)
 
@@ -20,6 +20,7 @@ The extension uses a `package.json` to define the build process. You should modi
 
 1. Download dependencies `npm install`.
 2. Build the extension `npm run build`. 
+3. Upload the generated .vsix file to your VSTS account.
 
 See [https://www.visualstudio.com/en-us/docs/integrate/extensions/get-started/node](https://www.visualstudio.com/en-us/docs/integrate/extensions/get-started/node) for details on how to create and publish an extension.
 
