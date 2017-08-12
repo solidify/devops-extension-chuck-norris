@@ -63,9 +63,9 @@
       "packagePath": "ChuckNorrisTask"
     },
     {
-      "path": "doc",
+      "path": "docs",
       "addressable": true,
-      "packagePath": "doc"
+      "packagePath": "docs"
     },
     {
       "path": "static",
