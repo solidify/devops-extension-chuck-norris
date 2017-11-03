@@ -5,9 +5,9 @@ By showing your willingness to contribute, you will assist us and the community 
 There are many ways to contribute: logging bugs, creating suggestions and submitting pull requests.
 
 # Did you find a bug?  
-- **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/ALM-Rangers/Guidance/issues).
+- **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/solidify/vsts-extension-chuck-norris/issues).
 
-- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/ALM-Rangers/Guidance/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
+- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/solidify/vsts-extension-chuck-norris/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
 
 
 # Did you write a patch that fixes a bug or adds a new feature?  
