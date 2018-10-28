@@ -56,7 +56,6 @@ export class BuildResultsSection extends Controls.BaseControl {
     ];
 
     private _quote: string;
-    private _isInitialized = false;
 
     public initialize(): void {
         super.initialize();
@@ -76,43 +75,8 @@ export class BuildResultsSection extends Controls.BaseControl {
         var sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig = VSS.getConfiguration();
         if (sharedConfig) {
             sharedConfig.onBuildChanged((build: TFS_Build_Contracts.Build) => {
-                if (!this._isInitialized) {
-                    this._updateBuildReportSection(sharedConfig, build);
-                    this._isInitialized = true;
-                }
                 this._updateBuildStatus(build);
             });
-        }
-    }
-
-    private _updateBuildReportSection(sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig,
-        build: TFS_Build_Contracts.Build) {
-        if (sharedConfig) {
-            var showMrNorris = false;
-            var buildClient: TFS_Build.BuildHttpClient3_1 = TFS_Build.getClient();
-            buildClient.getDefinition(build.definition.id, VSS.getWebContext().project.name).then(buildDefinition => {
-                buildDefinition.build.forEach(step => {
-                    if (step.task.id == "6785970c-2d58-4260-b047-0a54028ee9c1") {
-                        showMrNorris = true;
-                        console.log("Found mr Norris!")
-                    }
-                });
-                this._setSectionVisibility(sharedConfig, showMrNorris);
-            });
-        }
-    }
-
-    private _setSectionVisibility(sharedConfig: TFS_Build_Extension_Contracts.IBuildResultsViewExtensionConfig, enabled: boolean) {
-        var publisherId = VSS.getExtensionContext().publisherId;
-        var extensionId = VSS.getExtensionContext().extensionId
-        var sectionId = "chuck-norris-build-status-section";
-        var section = `${publisherId}.${extensionId}.${sectionId}`;
-        try {
-            console.log(`Setting ${section} to ${enabled}.`)
-            var x: any = sharedConfig;
-            x.setSectionVisibility(section, enabled);
-        } catch (error) {
-            console.log("Failed to set build section visibility.")
         }
     }
 
