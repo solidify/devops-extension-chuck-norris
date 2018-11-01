@@ -15,10 +15,14 @@
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services.Cloud"
+    },
+    {
+      "id": "Microsoft.TeamFoundation.Server",
+      "version": "[16.2,)"
     }
   ],
   "tags": [
-    "Build", 
+    "Build",
     "Fun"
   ],
   "links": {
@@ -104,7 +108,10 @@
         "name": "Chuck Norris Says",
         "uri": "StatusSection.html",
         "order": 20,
-        "height": 120
+        "height": 120,
+        "supportsTasks": [
+          "6785970c-2d58-4260-b047-0a54028ee9c1"
+        ]
       }
     }
   ]
