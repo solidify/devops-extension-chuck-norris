@@ -1,9 +1,16 @@
 resources:
 - repo: self
   clean: true
+
 queue:
   name: Hosted VS2017
   demands: npm
+
+variables:
+  major: 0
+  minor: 2
+
+name: $(major).$(minor)$(rev:.r)
 
 steps:
 - task: Npm@0
