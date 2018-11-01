@@ -6,7 +6,8 @@ This VSTS build extension will show a new section in your build report with an e
 See [Overview](docs/overview.md) for details on how the extension works and is intended to be used.
 
 # Building the extension #
-![](https://solidify.visualstudio.com/_apis/public/build/definitions/430a0fc1-6d24-414b-9bef-8afa19eb4b15/28/badge)
+
+[![Build Status](https://solidify.visualstudio.com/OSS/_apis/build/status/DevOps.Extensions.ChuckNorris)](https://solidify.visualstudio.com/OSS/_build/latest?definitionId=44)
 
 The extension is built and deployed to the VSTS Marketpace using VSTS, if you want to contibute to the public extension see [Contributions are welcome](#contributions-are-welcome).
 
