@@ -1,5 +1,5 @@
-# Add Chuck Norris quotes to your VSTS build report #
-This VSTS build extension will show a new section in your build report with an encouraging Chuck Norris quote.
+# Add Chuck Norris quotes to your Azure Pipelines build report #
+This Azure Pipelines build extension will show a new section in your build report with an encouraging Chuck Norris quote.
 
 ![](docs/chuck-build-report.png)
 
@@ -9,7 +9,7 @@ See [Overview](docs/overview.md) for details on how the extension works and is i
 
 [![Build Status](https://solidify.visualstudio.com/OSS/_apis/build/status/DevOps.Extensions.ChuckNorris)](https://solidify.visualstudio.com/OSS/_build/latest?definitionId=44)
 
-The extension is built and deployed to the VSTS Marketpace using VSTS, if you want to contibute to the public extension see [Contributions are welcome](#contributions-are-welcome).
+The extension is built and deployed to the Azure DevOps Marketpace using Azure Pipelines in a public Azure DevOps project, if you want to contibute to the public extension see [Contributions are welcome](#contributions-are-welcome).
 
 ## Pre-requisites ##
 The extension has the following pre-requisites:
@@ -21,7 +21,7 @@ The extension uses a `package.json` to define the build process. You should modi
 
 1. Download dependencies `npm install`.
 2. Build the extension `npm run build`. 
-3. Upload the generated .vsix file to your VSTS account.
+3. Upload the generated .vsix file to your Azure DevOps account.
 
 See [https://www.visualstudio.com/en-us/docs/integrate/extensions/get-started/node](https://www.visualstudio.com/en-us/docs/integrate/extensions/get-started/node) for details on how to create and publish an extension.
 
