@@ -27,21 +27,21 @@
   ],
   "links": {
     "home": {
-      "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+      "uri": "https://github.com/solidify/devops-extension-chuck-norris"
     },
     "getstarted": {
-      "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+      "uri": "https://github.com/solidify/devops-extension-chuck-norris"
     },
     "learn": {
-      "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+      "uri": "https://github.com/solidify/devops-extension-chuck-norris"
     },
     "support": {
-      "uri": "https://github.com/solidify/vsts-extension-chuck-norris/issues"
+      "uri": "https://github.com/solidify/devops-extension-chuck-norris/issues"
     }
   },
   "repository": {
     "type": "git",
-    "uri": "https://github.com/solidify/vsts-extension-chuck-norris"
+    "uri": "https://github.com/solidify/devops-extension-chuck-norris"
   },
   "branding": {
     "color": "rgb(0, 0, 0)",
