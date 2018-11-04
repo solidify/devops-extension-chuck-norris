@@ -2,10 +2,10 @@
 
 ![](/docs/chuck-build-task.png)
 
-Or if you prefer to use yaml build script just add the following task:
+Or if you prefer to use a yaml build script just add the following task:
 
 ```json
-task: solidify-labs.chucknorris-build-enhancer-dev.chuck-norris-task.ChuckNorrisTask@0
+task: solidify-labs.chucknorris-build-enhancer.chuck-norris-task.ChuckNorrisTask@0
   displayName: 'Chuck Norris Quotes'
 ```
 
