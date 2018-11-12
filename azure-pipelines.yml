@@ -26,7 +26,8 @@ steps:
     projectKey: 'devops-extension-chuck-norris'
     projectName: 'devops-extension-chuck-norris'
     projectVersion: '$(Build.BuildNumber)'
-
+  enabled: false
+  
 - task: Npm@1
   displayName: 'npm build'
   inputs:
@@ -36,10 +37,12 @@ steps:
     
 - task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
   displayName: 'Run Code Analysis'
-
+  enabled: false
+  
 - task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
   displayName: 'Publish Quality Gate Result'
-
+  enabled: false
+  
 - task: ms-devlabs.vsts-developer-tools-build-tasks.package-extension-build-task.PackageVSTSExtension@1
   displayName: 'Package Extension'
   inputs:
