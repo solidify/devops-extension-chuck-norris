@@ -2,6 +2,7 @@
   "name": "chucknorris-build-enhancer",
   "scripts": {
     "build": "tsc -p .",
+    "postbuild": "npm run package",
     "package": "tfx extension create",
     "clean": "rimraf ./dist && rimraf ./*.vsix"
   },
