@@ -37,7 +37,7 @@ We thank the following contributor(s): **Mathias Olausson**.
 
 ## Contributions are welcome ##
 
-Here is how you can contribute to this project:  
+Here is how you can contribute to this project: CI test 
 
 - Submit bugs and help us verify fixes  
 - Submit pull requests for bug fixes and features and discuss existing proposals   
