@@ -1,5 +1,5 @@
 # Add Chuck Norris quotes to your Azure Pipelines build report #
-This Azure Pipelines build extension will show a new section in your build report with an encouraging Chuck Norris quote.
+This Azure Pipelines build extension will show a new section in your build report with an encouraging Chuck Norris quote...
 
 ![](docs/chuck-build-report.png)
 
